@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import mittaLogo from '../../assets/mitta.svg';
 
 const Header = () => {
@@ -6,7 +7,9 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img src={mittaLogo} alt="Mitta Logo" className="h-12 mr-3" />
+            <Link to="/">
+              <img src={mittaLogo} alt="Mitta Logo" className="h-12 mr-3" />
+            </Link>
           </div>
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
@@ -15,6 +18,9 @@ const Header = () => {
               </li>
               <li>
                 <a href="#services" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Serviços</a>
+              </li>
+              <li>
+                <Link to="/equipe" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Equipe</Link>
               </li>
               <li>
                 <a href="#about" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Sobre</a>

@@ -32,16 +32,15 @@ const servicesData: Record<string, ServiceData> = {
     id: 'massagem-relaxante',
     name: 'Massagem Relaxante',
     description: 'Técnica com toques suaves e profundos que aliviam o estresse e tensões',
-    longDescription: 'A massagem relaxante é uma técnica terapêutica que utiliza movimentos suaves e rítmicos para promover o relaxamento muscular e mental. Ideal para aliviar o estresse do dia a dia, melhorar a qualidade do sono e proporcionar bem-estar geral.',
-    duration: '60-90 minutos',
+    longDescription: 'Com 1h de duração, a massagem relaxante é realizada com movimentos suaves, contínuos e leves, que envolvem deslizamentos e toques harmoniosos por todo o corpo. Esses movimentos ajudam a liberar a tensão muscular e trazer sensação imediata de bem-estar.',
+    duration: '1 hora',
     price: 'R$ 120',
     benefits: [
-      'Reduz o estresse e ansiedade',
+      'Reduz o estresse e a ansiedade',
       'Alivia tensões musculares',
-      'Melhora a qualidade do sono',
-      'Promove relaxamento mental',
-      'Aumenta a circulação sanguínea',
-      'Reduz dores de cabeça tensionais'
+      'Melhora a circulação sanguínea',
+      'Promove relaxamento físico e mental',
+      'Contribui para melhora da qualidade do sono'
     ],
     procedure: [
       'Avaliação inicial e conversa sobre necessidades',
@@ -52,11 +51,44 @@ const servicesData: Record<string, ServiceData> = {
       'Finalização com toques leves e relaxantes'
     ],
     contraindications: [
-      'Feridas abertas na pele',
-      'Inflamações agudas',
-      'Febre alta',
-      'Trombose venosa',
-      'Primeiro trimestre de gravidez'
+      'Febre ou infecções ativas',
+      'Processos inflamatórios ou lesões de pele',
+      'Trombose ou problemas circulatórios graves',
+      'Pós-cirúrgico imediato sem liberação médica',
+      'Doenças cardíacas descompensadas',
+      'Gestantes (salvo com liberação médica e evitando abdômen)'
+    ],
+    image: massagemRelaxanteImg,
+    category: 'massage'
+  },
+  'massagem-relaxante-pedras-quentes': {
+    id: 'massagem-relaxante-pedras-quentes',
+    name: 'Massagem Relaxante com Pedras Quentes',
+    description: 'Combina massagem relaxante com pedras aquecidas',
+    longDescription: 'Com 1h de duração, essa técnica combina manobras suaves de massagem relaxante com a aplicação de pedras aquecidas em pontos estratégicos do corpo. O calor das pedras ajuda a dilatar os vasos sanguíneos, potencializando o relaxamento muscular e a sensação de bem-estar.',
+    duration: '1 hora',
+    price: 'R$ 150',
+    benefits: [
+      'Relaxamento profundo do corpo e da mente',
+      'Alívio de tensões e dores musculares',
+      'Melhora da circulação sanguínea',
+      'Redução do estresse e da ansiedade',
+      'Aumento da sensação de conforto e equilíbrio'
+    ],
+    procedure: [
+      'Avaliação inicial e conversa sobre necessidades',
+      'Aplicação de óleo essencial relaxante',
+      'Massagem suave nas costas e ombros',
+      'Técnicas de alongamento passivo',
+      'Massagem nos braços e mãos',
+      'Finalização com toques leves e relaxantes'
+    ],
+    contraindications: [
+      'Febre, inflamações ou infecções na pele',
+      'Problemas circulatórios graves ou trombose',
+      'Hipertensão ou doenças cardíacas descompensadas',
+      'Diabetes descontrolada (risco de sensibilidade alterada)',
+      'Gestantes (salvo com liberação médica e evitando abdômen)'
     ],
     image: massagemRelaxanteImg,
     category: 'massage'
@@ -65,16 +97,15 @@ const servicesData: Record<string, ServiceData> = {
     id: 'massagem-terapeutica',
     name: 'Massagem Terapêutica',
     description: 'Focada em dores musculares e pontos de tensão',
-    longDescription: 'A massagem terapêutica é uma técnica especializada que visa tratar problemas musculares específicos, aliviar dores crônicas e restaurar a função muscular. Utiliza diferentes técnicas como pressão profunda, alongamento e mobilização articular.',
-    duration: '60-75 minutos',
+    longDescription: 'Com 1h de duração, massagem terapêutica utiliza movimentos específicos e profundos, com foco em aliviar dores musculares, corrigir tensões e melhorar a postura. A intensidade é ajustada conforme a necessidade de cada paciente.',
+    duration: '1 hora',
     price: 'R$ 140',
     benefits: [
-      'Alivia dores musculares crônicas',
-      'Melhora a mobilidade articular',
-      'Reduz inflamações musculares',
-      'Acelera recuperação de lesões',
-      'Melhora a postura',
-      'Reduz tensões específicas'
+      'Alívio de dores musculares e tensões',
+      'Melhora da postura e flexibilidade',
+      'Redução de pontos de gatilho e contraturas',
+      'Estímulo à circulação sanguínea',
+      'Contribuição para relaxamento físico e bem-estar'
     ],
     procedure: [
       'Avaliação postural e identificação de pontos de tensão',
@@ -85,11 +116,13 @@ const servicesData: Record<string, ServiceData> = {
       'Orientações para manutenção dos resultados'
     ],
     contraindications: [
-      'Lesões agudas recentes',
-      'Fraturas não consolidadas',
-      'Inflamações agudas',
-      'Tumores malignos',
-      'Doenças infecciosas da pele'
+      'Febre ou infecções ativas',
+      'Inflamações ou lesões recentes',
+      'Trombose ou problemas circulatórios graves',
+      'Osteoporose severa (dependendo da intensidade)',
+      'Fraturas recentes ou pós-cirúrgico sem liberação médica',
+      'Doenças cardíacas descompensadas',
+      'Gestantes (salvo com liberação médica)'
     ],
     image: massagemTerapeuticaImg,
     category: 'massage'
@@ -98,16 +131,18 @@ const servicesData: Record<string, ServiceData> = {
     id: 'drenagem-linfatica-manual',
     name: 'Drenagem Linfática Manual',
     description: 'Movimentos leves que ativam o sistema linfático',
-    longDescription: 'A drenagem linfática manual é uma técnica suave e rítmica que estimula o sistema linfático, promovendo a eliminação de toxinas e líquidos retidos. Excelente para reduzir inchaços, melhorar a circulação e o sistema imunológico.',
+    longDescription: 'A drenagem linfática é realizada com movimentos suaves, rítmicos e delicados, sempre direcionados aos gânglios linfáticos. Esses toques estimulam a circulação da linfa, ajudando a reduzir o inchaço, eliminar toxinas e promover bem-estar.',
     duration: '60 minutos',
     price: 'R$ 130',
     benefits: [
-      'Reduz inchaços e edemas',
-      'Melhora a circulação linfática',
-      'Fortalece o sistema imunológico',
-      'Acelera recuperação pós-cirúrgica',
-      'Reduz celulite',
-      'Promove relaxamento profundo'
+      'Melhora da circulação linfática e sanguínea',
+      'Redução do inchaço e retenção de líquidos',
+      'Auxilia no processo de desintoxicação do organismo',
+      'Acelera a recuperação pós-cirúrgica (quando liberado pelo médico)',
+      'Diminui sensação de pernas pesadas e cansadas',
+      'Contribui para melhora da celulite (pela redução de edema)',
+      'Promove relaxamento e bem-estar',
+      'Pode auxiliar no fortalecimento do sistema imunológico'
     ],
     procedure: [
       'Avaliação do sistema linfático',
@@ -118,11 +153,55 @@ const servicesData: Record<string, ServiceData> = {
       'Drenagem dos membros inferiores'
     ],
     contraindications: [
-      'Infecções agudas',
-      'Trombose venosa',
-      'Insuficiência cardíaca',
-      'Hipertensão arterial não controlada',
-      'Câncer ativo'
+      'Insuficiência cardíaca descompensada',
+      'Insuficiência renal aguda',
+      'Infecções agudas (febre, viroses, bacterianas)',
+      'Trombose venosa profunda',
+      'Neoplasias malignas sem liberação médica',
+      'Gestantes (só após o 3º mês e com liberação médica)',
+      'Hipotensão arterial (pressão baixa)',
+      'Doenças da tireoide descompensadas',
+      'Pós-cirúrgico imediato (sem liberação do cirurgião)',
+      'Processos inflamatórios ou alérgicos ativos'
+    ],
+    image: drenagemLinfaticaImg,
+    category: 'massage'
+  },
+  'drenagem-modeladora-combinada': {
+    id: 'drenagem-modeladora-combinada',
+    name: 'Drenagem linfática manual + Modeladora Local',
+    description: 'Combina drenagem linfática com massagem modeladora',
+    longDescription: 'Com 1h20 de duração, essa técnica combina a drenagem linfática manual, realizada com movimentos suaves e direcionados aos gânglios linfáticos de todo o corpo, com massagem modeladora localizada, que utiliza manobras mais firmes para atuar em áreas específicas. O objetivo é reduzir inchaço, estimular a circulação e ajudar na definição do corpo.',
+    duration: '1h20',
+    price: 'R$ 180',
+    benefits: [
+      'Redução de retenção de líquido e inchaço',
+      'Melhora da circulação linfática e sanguínea',
+      'Redução de medidas em áreas específicas',
+      'Auxílio na melhora da celulite',
+      'Sensação de leveza e bem-estar'
+    ],
+    procedure: [
+      'Avaliação do sistema linfático e áreas a serem trabalhadas',
+      'Técnicas de respiração para relaxamento',
+      'Drenagem do pescoço e região cervical',
+      'Drenagem dos membros superiores',
+      'Drenagem do tronco e abdômen',
+      'Drenagem dos membros inferiores',
+      'Aplicação de creme modelador',
+      'Técnicas de amassamento profundo',
+      'Movimentos de pinçamento',
+      'Técnicas de percussão',
+      'Finalização com drenagem linfática'
+    ],
+    contraindications: [
+      'Insuficiência cardíaca descompensada',
+      'Insuficiência renal aguda',
+      'Trombose venosa profunda',
+      'Infecções agudas ou processos inflamatórios',
+      'Neoplasias malignas sem liberação médica',
+      'Gestantes',
+      'Hipotensão arterial ou doenças da tireoide descompensadas'
     ],
     image: drenagemLinfaticaImg,
     category: 'massage'
@@ -164,16 +243,14 @@ const servicesData: Record<string, ServiceData> = {
     id: 'ultrassom-gordura-localizada',
     name: 'Ultrassom para Gordura Localizada',
     description: 'Ondas sonoras que quebram células de gordura',
-    longDescription: 'O ultrassom para gordura localizada utiliza ondas sonoras de alta frequência para quebrar as células de gordura, facilitando sua eliminação natural pelo organismo. É um tratamento não invasivo e eficaz para áreas específicas.',
-    duration: '30-45 minutos',
+    longDescription: 'O ultrassom estético utiliza ondas sonoras de alta frequência que penetram no tecido adiposo, promovendo a vibração das células de gordura, rompendo suas membranas e facilitando sua eliminação. Sua aplicação é realizada por regiões, onde é aplicado gel de contato para condução das ondas, é indolor e não invasivo.',
+    duration: '1 hora',
     price: 'R$ 180',
     benefits: [
-      'Reduz gordura localizada',
-      'Não invasivo e indolor',
-      'Melhora o contorno corporal',
-      'Estimula o metabolismo local',
-      'Resultados visíveis em poucas sessões',
-      'Sem tempo de recuperação'
+      'Redução de medidas e da gordura localizada',
+      'Melhora a textura da pele',
+      'Auxilia no tratamento da celulite',
+      'Estimula a circulação sanguínea e linfática'
     ],
     procedure: [
       'Avaliação e marcação das áreas',
@@ -184,11 +261,12 @@ const servicesData: Record<string, ServiceData> = {
       'Orientações para manutenção'
     ],
     contraindications: [
-      'Gravidez',
-      'Pacemaker',
-      'Implantes metálicos',
-      'Doenças cardíacas',
-      'Tumores na região'
+      'Gestantes e lactantes',
+      'Marcapasso ou dispositivos eletrônicos implantados',
+      'Inflamações, feridas ou infecções na região',
+      'Portadores de DIU de cobre',
+      'Neoplasias malignas',
+      'Doenças cardíacas descompensadas'
     ],
     image: ultrassomGorduraImg,
     category: 'corporeal'
@@ -197,16 +275,16 @@ const servicesData: Record<string, ServiceData> = {
     id: 'ultrassom-celulite',
     name: 'Ultrassom para Celulite',
     description: 'Reduz celulite inflamada e melhora a circulação',
-    longDescription: 'O ultrassom para celulite é um tratamento específico que utiliza ondas sonoras para quebrar os nódulos de gordura e fibrose que formam a celulite, melhorando a textura da pele e reduzindo o aspecto casca de laranja.',
-    duration: '30-45 minutos',
+    longDescription: 'Procedimento que utiliza ondas ultrassônicas para penetrar nas camadas mais profundas da pele e tecido subcutâneo, promovendo vibrações e aquecimento controlado, estimulando a circulação e a oxigenação dos tecidos. Ajuda a desfazer fibroses e melhorar a permeabilidade da pele para ativos anticelulite.',
+    duration: '1 hora',
     price: 'R$ 160',
     benefits: [
-      'Reduz o aspecto da celulite',
-      'Melhora a textura da pele',
-      'Ativa a circulação local',
-      'Quebra nódulos de fibrose',
-      'Resultados progressivos',
-      'Tratamento localizado'
+      'Melhora o aspecto da celulite (reduz ondulações e irregularidades da pele)',
+      'Estimula a circulação sanguínea e linfática',
+      'Auxilia na quebra das células de gordura',
+      'Melhora a oxigenação e nutrição celular',
+      'Potencializa a ação de ativos cosméticos',
+      'Ajuda a reduzir retenção de líquidos'
     ],
     procedure: [
       'Avaliação do grau de celulite',
@@ -217,11 +295,13 @@ const servicesData: Record<string, ServiceData> = {
       'Orientações para manutenção'
     ],
     contraindications: [
-      'Gravidez',
-      'Pele lesionada',
-      'Inflamações agudas',
-      'Doenças circulatórias graves',
-      'Tumores na região'
+      'Gravidez e lactação',
+      'Doenças cardíacas ou uso de marca-passo',
+      'Trombose ou problemas circulatórios severos',
+      'Processos inflamatórios ou infecciosos na região tratada',
+      'Lesões, feridas ou doenças de pele no local',
+      'Doenças hepáticas ou renais graves',
+      'Portadoras de DIU de cobre'
     ],
     image: ultrassomCeluliteImg,
     category: 'corporeal'
@@ -230,16 +310,13 @@ const servicesData: Record<string, ServiceData> = {
     id: 'radiofrequencia-corporal',
     name: 'Radiofrequência Corporal',
     description: 'Calor controlado para estimular colágeno e elastina',
-    longDescription: 'A radiofrequência corporal utiliza ondas eletromagnéticas para gerar calor controlado na pele, estimulando a produção de colágeno e elastina. Excelente para combater flacidez, celulite e melhorar a textura da pele.',
-    duration: '45-60 minutos',
+    longDescription: 'É aplicado glicerina na pele para facilitar o deslizamento do aplicador e a condução da energia. O aparelho emite ondas de radiofrequência que aquecem as camadas mais profundas da pele (derme) de forma controlada, este aquecimento estimula a produção de colágeno e elastina, promovendo firmeza e efeito lifting. A temperatura na pele é monitorada durante todo o procedimento para garantir segurança e eficácia. A sessão é indolor, podendo causar apenas uma sensação de calor agradável.',
+    duration: '1 hora',
     price: 'R$ 200',
     benefits: [
-      'Estimula produção de colágeno',
-      'Reduz flacidez cutânea',
-      'Melhora a textura da pele',
-      'Reduz celulite',
-      'Rejuvenesce a pele',
-      'Resultados duradouros'
+      'Diminuição da flacidez da pele',
+      'Estímulo da produção de colágeno',
+      'Melhora da textura e firmeza da pele'
     ],
     procedure: [
       'Avaliação da pele e áreas',
@@ -250,11 +327,13 @@ const servicesData: Record<string, ServiceData> = {
       'Aplicação de creme hidratante'
     ],
     contraindications: [
-      'Gravidez',
-      'Pacemaker',
-      'Implantes metálicos',
-      'Doenças cardíacas',
-      'Pele muito sensível'
+      'Gestantes e lactantes',
+      'Marcapasso ou dispositivos eletrônicos implantados',
+      'Portadores de DIU de cobre',
+      'Inflamações, feridas ou infecções na região',
+      'Trombose venosa ou problemas circulatórios graves',
+      'Neoplasias malignas',
+      'Doenças cardíacas descompensadas'
     ],
     image: radiofrequenciaCorporalImg,
     category: 'corporeal'
@@ -296,16 +375,15 @@ const servicesData: Record<string, ServiceData> = {
     id: 'limpeza-pele-profunda',
     name: 'Limpeza de Pele Profunda',
     description: 'Remove impurezas e renova a pele',
-    longDescription: 'A limpeza de pele profunda é um tratamento completo que remove cravos, acne e outras impurezas, renovando a pele e melhorando sua textura. É fundamental para manter a saúde e beleza da pele.',
-    duration: '60-90 minutos',
+    longDescription: 'Procedimento para higienização profunda da pele, removendo cravos, impurezas, células mortas e excesso de oleosidade. Inclui higienização, esfoliação, emoliência, extração manual, máscara calmante e hidratação, tem em torno de 1h30 de duração.',
+    duration: '1h30',
     price: 'R$ 120',
     benefits: [
-      'Remove cravos e acne',
-      'Renova a pele',
-      'Melhora a textura',
+      'Reduz cravos e previne acne',
       'Desobstrui poros',
-      'Previne problemas cutâneos',
-      'Pele mais saudável'
+      'Melhora a absorção de cosméticos',
+      'Deixa a pele mais suave e uniforme',
+      'Melhora a oxigenação e o viço da pele'
     ],
     procedure: [
       'Anamnese e avaliação da pele',
@@ -316,11 +394,10 @@ const servicesData: Record<string, ServiceData> = {
       'Proteção solar'
     ],
     contraindications: [
-      'Pele muito sensível',
-      'Inflamações agudas',
-      'Feridas abertas',
-      'Alergias a produtos',
-      'Gravidez'
+      'Pele com lesões ou feridas abertas',
+      'Acne inflamatória severa',
+      'Doenças de pele infecciosas',
+      'Queimaduras solares recentes'
     ],
     image: limpezaPeleImg,
     category: 'facial'
@@ -329,16 +406,15 @@ const servicesData: Record<string, ServiceData> = {
     id: 'peeling-quimico',
     name: 'Peeling Químico',
     description: 'Renova a pele e clareia manchas',
-    longDescription: 'O peeling químico é um tratamento que utiliza ácidos específicos para renovar a pele, clarear manchas, tratar acne e estimular a produção de colágeno. O tipo de ácido é escolhido conforme a necessidade da pele.',
-    duration: '45-60 minutos',
+    longDescription: 'Aplicação de ácidos na pele para promover a renovação celular e descamação controlada, promovendo melhora das manchas, redução de linhas finas de expressão, viço e textura da pele. Leva em torno de 1h de aplicação.',
+    duration: '1 hora',
     price: 'R$ 250',
     benefits: [
-      'Renova a pele',
-      'Clareia manchas',
-      'Trata acne',
-      'Reduz linhas finas',
-      'Estimula colágeno',
-      'Uniformiza o tom'
+      'Clareamento de manchas (melasma, hiperpigmentações pós-inflamatórias)',
+      'Redução de linhas finas e rugas superficiais',
+      'Melhora da textura e luminosidade',
+      'Estimula a produção de colágeno',
+      'Auxilia no tratamento de acne ativa e cicatrizes'
     ],
     procedure: [
       'Avaliação e escolha do ácido',
@@ -349,11 +425,11 @@ const servicesData: Record<string, ServiceData> = {
       'Proteção e orientações'
     ],
     contraindications: [
-      'Pele muito sensível',
-      'Gravidez',
-      'Lactação',
-      'Exposição solar recente',
-      'Histórico de queloides'
+      'Pele sensível ou com dermatite ativa',
+      'Gravidez e lactação (dependendo do ácido)',
+      'Uso recente de isotretinoína (aguardar 6 meses)',
+      'Infecções cutâneas',
+      'Alergia aos componentes da fórmula'
     ],
     image: peelingQuimicoImg,
     category: 'facial'
@@ -362,16 +438,16 @@ const servicesData: Record<string, ServiceData> = {
     id: 'microagulhamento',
     name: 'Microagulhamento',
     description: 'Cria microcanais para absorção de ativos',
-    longDescription: 'O microagulhamento utiliza pequenas agulhas para criar microcanais na pele, facilitando a absorção de ativos e estimulando a produção de colágeno. Excelente para tratar manchas, poros e linhas finas.',
-    duration: '60-75 minutos',
+    longDescription: 'Procedimento que utiliza um equipamento com microagulhas para criar microperfurações controladas na pele, facilitando a permeação de ativos para estimular a produção de colágeno e elastina. Tem em torno de 1h de duração.',
+    duration: '1 hora',
     price: 'R$ 300',
     benefits: [
-      'Trata manchas',
-      'Reduz poros',
-      'Melhora linhas finas',
-      'Estimula colágeno',
-      'Absorção de ativos',
-      'Pele mais firme'
+      'Estimula a renovação celular e produção de colágeno',
+      'Melhora textura e firmeza da pele',
+      'Reduz cicatrizes de acne',
+      'Ameniza linhas finas e rugas',
+      'Clareia manchas e uniformiza o tom da pele',
+      'Diminui poros dilatados'
     ],
     procedure: [
       'Avaliação da pele',
@@ -382,11 +458,12 @@ const servicesData: Record<string, ServiceData> = {
       'Proteção e orientações'
     ],
     contraindications: [
-      'Pele muito sensível',
-      'Gravidez',
-      'Lactação',
-      'Histórico de queloides',
-      'Doenças autoimunes'
+      'Infecções ou inflamações na pele no local de aplicação',
+      'Herpes ativa',
+      'Uso de isotretinoína (aguardar no mínimo 6 meses após uso)',
+      'Diabetes descompensada',
+      'Problemas de cicatrização ou queloides',
+      'Gravidez'
     ],
     image: microagulhamentoImg,
     category: 'facial'
@@ -395,16 +472,16 @@ const servicesData: Record<string, ServiceData> = {
     id: 'radiofrequencia-facial',
     name: 'Radiofrequência Facial',
     description: 'Calor para estimular colágeno e firmeza',
-    longDescription: 'A radiofrequência facial utiliza calor controlado para estimular a produção de colágeno, melhorar a firmeza da pele e reduzir linhas de expressão. É um tratamento não invasivo e eficaz para rejuvenescimento.',
-    duration: '45-60 minutos',
+    longDescription: 'Tratamento que utiliza ondas de radiofrequência para aquecer as camadas mais profundas da pele, estimulando a produção de colágeno e elastina e auxilia no remodelamento facial. Pode ser associada a outros procedimentos para potencializar resultados. Em torno de 1h de duração.',
+    duration: '1 hora',
     price: 'R$ 220',
     benefits: [
-      'Estimula colágeno',
-      'Melhora a firmeza',
-      'Reduz linhas finas',
-      'Rejuvenesce a pele',
-      'Não invasivo',
-      'Resultados duradouros'
+      'Melhora a firmeza e sustentação da pele',
+      'Reduz a flacidez facial',
+      'Ameniza rugas e linhas de expressão',
+      'Estimula a circulação sanguínea',
+      'Promove um "efeito lifting" sem cirurgia',
+      'Auxilia na melhora do contorno facial'
     ],
     procedure: [
       'Avaliação da pele',
@@ -415,11 +492,12 @@ const servicesData: Record<string, ServiceData> = {
       'Proteção solar'
     ],
     contraindications: [
-      'Pele muito sensível',
-      'Pacemaker',
-      'Implantes metálicos',
-      'Doenças cardíacas',
-      'Gravidez'
+      'Gravidez',
+      'Presença de marca-passo ou próteses metálicas na área tratada',
+      'Doenças autoimunes ativas',
+      'Lesões ou feridas abertas na pele',
+      'Câncer ou histórico recente',
+      'Infecções cutâneas'
     ],
     image: radiofrequenciaFacialImg,
     category: 'facial'
@@ -449,7 +527,7 @@ const ServiceDetail: React.FC = () => {
       <div className="bg-white border-b border-slate-100 sticky top-0 z-40">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-purple-600 hover:text-purple-700 font-medium">
+            <Link to="/" className="text-brand-ui-element hover:text-brand-gold font-medium">
               ← Voltar para serviços
             </Link>
             <div className="text-sm text-slate-500">
@@ -465,23 +543,23 @@ const ServiceDetail: React.FC = () => {
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-brand-ui-element/10 text-brand-ui-element px-3 py-1 rounded-full text-sm font-medium mb-4">
               {service.category === 'massage' && '💆‍♀️ Massagem'}
               {service.category === 'corporeal' && '💪 Corporal'}
               {service.category === 'facial' && '✨ Facial'}
             </div>
-            <h1 className="text-5xl font-light text-slate-800 mb-6 tracking-tight">
+            <h1 className="text-5xl font-light text-brand-text-primary mb-6 tracking-tight">
               {service.name}
             </h1>
-            <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+            <p className="text-xl text-brand-text-secondary mb-6 leading-relaxed">
               {service.longDescription}
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="bg-white px-4 py-2 rounded-full border border-slate-200 text-slate-700">
+              <div className="bg-white px-4 py-2 rounded-full border border-brand-ui-element/20 text-brand-text-primary">
                 <span className="font-medium">⏱️</span> {service.duration}
               </div>
               {service.price && (
-                <div className="bg-purple-100 px-4 py-2 rounded-full text-purple-700 font-medium">
+                <div className="bg-brand-ui-element/10 px-4 py-2 rounded-full text-brand-ui-element font-medium">
                   <span>💰</span> {service.price}
                 </div>
               )}
@@ -502,34 +580,34 @@ const ServiceDetail: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Benefits */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-              <h2 className="text-2xl font-medium text-slate-800 mb-6 flex items-center gap-2">
-                <span className="text-green-500">✓</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-brand-ui-element/20">
+              <h2 className="text-2xl font-medium text-brand-text-primary mb-6 flex items-center gap-2">
+                <span className="text-brand-green">✓</span>
                 Benefícios
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {service.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-slate-600">{benefit}</span>
+                    <div className="w-2 h-2 bg-brand-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-brand-text-secondary">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Procedure */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-              <h2 className="text-2xl font-medium text-slate-800 mb-6 flex items-center gap-2">
-                <span className="text-blue-500">📋</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-brand-ui-element/20">
+              <h2 className="text-2xl font-medium text-brand-text-primary mb-6 flex items-center gap-2">
+                <span className="text-brand-ui-element">📋</span>
                 Como é realizado
               </h2>
               <div className="space-y-4">
                 {service.procedure.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">
+                    <div className="w-8 h-8 bg-brand-ui-element/10 text-brand-ui-element rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">
                       {index + 1}
                     </div>
-                    <span className="text-slate-600">{step}</span>
+                    <span className="text-brand-text-secondary">{step}</span>
                   </div>
                 ))}
               </div>
@@ -539,8 +617,8 @@ const ServiceDetail: React.FC = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Contraindications */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-              <h3 className="text-lg font-medium text-slate-800 mb-4 flex items-center gap-2">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-brand-ui-element/20">
+              <h3 className="text-lg font-medium text-brand-text-primary mb-4 flex items-center gap-2">
                 <span className="text-red-500">⚠️</span>
                 Contraindicações
               </h3>
@@ -548,21 +626,21 @@ const ServiceDetail: React.FC = () => {
                 {service.contraindications.map((contraindication, index) => (
                   <div key={index} className="flex items-start gap-2">
                     <span className="text-red-500 mt-1">•</span>
-                    <span className="text-sm text-slate-600">{contraindication}</span>
+                    <span className="text-sm text-brand-text-secondary">{contraindication}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
-              <h3 className="text-lg font-medium text-slate-800 mb-3">
+            <div className="bg-gradient-to-br from-brand-ui-element/5 to-brand-gold/5 rounded-2xl p-6 border border-brand-ui-element/20">
+              <h3 className="text-lg font-medium text-brand-text-primary mb-3">
                 Agende sua sessão
               </h3>
-              <p className="text-slate-600 text-sm mb-4">
+              <p className="text-brand-text-secondary text-sm mb-4">
                 Entre em contato para agendar uma consulta e conhecer melhor este tratamento.
               </p>
-              <button className="w-full bg-purple-600 text-white py-3 px-4 rounded-xl font-medium hover:bg-purple-700 transition-colors">
+              <button className="w-full bg-brand-ui-element text-white py-3 px-4 rounded-xl font-medium hover:bg-brand-gold transition-colors">
                 Agendar Consulta
               </button>
             </div>
