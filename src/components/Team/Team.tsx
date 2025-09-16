@@ -83,7 +83,7 @@ const Team = () => {
         {/* Team Grid */}
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member: any, index) => (
             <div 
               key={member.name} 
               className={`group relative bg-white rounded-2xl shadow-sm p-8 border border-slate-200 h-full transition-all duration-300 hover:shadow-md ${
