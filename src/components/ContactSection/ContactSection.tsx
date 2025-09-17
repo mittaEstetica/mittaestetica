@@ -30,7 +30,7 @@ function ContactSection() {
               </div>
               <span className="text-lg font-semibold text-slate-800">Endereço</span>
             </div>
-            <div className="text-slate-700 text-base font-medium mb-1">Rua das Flores, 68 - Passo da Areia</div>
+            <div className="text-slate-700 text-base font-medium mb-1">Rua Açores, 68 - Passo da Areia</div>
             <div className="text-slate-400 text-sm">Porto Alegre, RS - 91030-340</div>
           </div>
           {/* Horário */}

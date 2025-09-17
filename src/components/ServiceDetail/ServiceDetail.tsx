@@ -97,12 +97,11 @@ const servicesData: Record<string, ServiceData> = {
     id: 'massagem-terapeutica',
     name: 'Massagem Terapêutica',
     description: 'Focada em dores musculares e pontos de tensão',
-    longDescription: 'Com 1h de duração, massagem terapêutica utiliza movimentos específicos e profundos, com foco em aliviar dores musculares, corrigir tensões e melhorar a postura. A intensidade é ajustada conforme a necessidade de cada paciente.',
+    longDescription: 'Com 1h de duração, massagem terapêutica utiliza movimentos específicos e profundos, com foco em aliviar dores musculares, corrigir tensões. A intensidade é ajustada conforme a necessidade de cada paciente.',
     duration: '1 hora',
     price: 'R$ 140',
     benefits: [
       'Alívio de dores musculares e tensões',
-      'Melhora da postura e flexibilidade',
       'Redução de pontos de gatilho e contraturas',
       'Estímulo à circulação sanguínea',
       'Contribuição para relaxamento físico e bem-estar'
@@ -210,15 +209,13 @@ const servicesData: Record<string, ServiceData> = {
     id: 'massagem-modeladora-local',
     name: 'Massagem Modeladora Local',
     description: 'Técnica intensa para modelar o corpo e reduzir medidas',
-    longDescription: 'A massagem modeladora é uma técnica vigorosa que utiliza movimentos rápidos e intensos para quebrar gorduras localizadas, melhorar a circulação e modelar o contorno corporal. Ideal para complementar tratamentos de emagrecimento.',
-    duration: '45-60 minutos',
+    longDescription: 'A massagem modeladora é uma técnica vigorosa que utiliza movimentos rápidos e intensos para melhorar a circulação e modelar o contorno corporal. Ideal para complementar tratamentos de emagrecimento.',
+    duration: '20 minutos',
     price: 'R$ 150',
     benefits: [
-      'Reduz medidas temporariamente',
       'Melhora o aspecto da celulite',
+      'Melhora o contorno corporal',
       'Ativa a circulação sanguínea',
-      'Elimina toxinas',
-      'Modela o contorno corporal',
       'Reduz retenção de líquidos'
     ],
     procedure: [
@@ -226,7 +223,6 @@ const servicesData: Record<string, ServiceData> = {
       'Aplicação de creme modelador',
       'Técnicas de amassamento profundo',
       'Movimentos de pinçamento',
-      'Técnicas de percussão',
       'Finalização com drenagem linfática'
     ],
     contraindications: [
@@ -249,7 +245,7 @@ const servicesData: Record<string, ServiceData> = {
     benefits: [
       'Redução de medidas e da gordura localizada',
       'Melhora a textura da pele',
-      'Auxilia no tratamento da celulite',
+      'Usando para o tratamento de celulite',
       'Estimula a circulação sanguínea e linfática'
     ],
     procedure: [
@@ -257,7 +253,6 @@ const servicesData: Record<string, ServiceData> = {
       'Aplicação de gel condutor',
       'Aplicação do ultrassom nas áreas marcadas',
       'Controle de intensidade e tempo',
-      'Massagem pós-tratamento',
       'Orientações para manutenção'
     ],
     contraindications: [
@@ -266,7 +261,6 @@ const servicesData: Record<string, ServiceData> = {
       'Inflamações, feridas ou infecções na região',
       'Portadores de DIU de cobre',
       'Neoplasias malignas',
-      'Doenças cardíacas descompensadas'
     ],
     image: ultrassomGorduraImg,
     category: 'corporeal'
@@ -290,8 +284,6 @@ const servicesData: Record<string, ServiceData> = {
       'Avaliação do grau de celulite',
       'Aplicação de gel condutor',
       'Tratamento com ultrassom específico',
-      'Massagem de drenagem',
-      'Aplicação de creme redutor',
       'Orientações para manutenção'
     ],
     contraindications: [
@@ -323,7 +315,6 @@ const servicesData: Record<string, ServiceData> = {
       'Limpeza e preparação da pele',
       'Aplicação da radiofrequência',
       'Controle de temperatura',
-      'Massagem pós-tratamento',
       'Aplicação de creme hidratante'
     ],
     contraindications: [
@@ -388,7 +379,6 @@ const servicesData: Record<string, ServiceData> = {
     procedure: [
       'Anamnese e avaliação da pele',
       'Desmaquilagem e limpeza',
-      'Vaporização para abertura dos poros',
       'Extração de comedões',
       'Aplicação de produtos específicos',
       'Proteção solar'
@@ -452,7 +442,6 @@ const servicesData: Record<string, ServiceData> = {
     procedure: [
       'Avaliação da pele',
       'Limpeza e preparação',
-      'Aplicação de anestésico',
       'Microagulhamento',
       'Aplicação de ativos',
       'Proteção e orientações'
