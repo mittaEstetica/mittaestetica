@@ -4,6 +4,7 @@ import massagemRelaxanteImg from '../../assets/Services/massagem_relaxante.png';
 import massagemTerapeuticaImg from '../../assets/Services/massagem_terapeutica.png';
 import drenagemLinfaticaImg from '../../assets/Services/drenagem_linfatica_manual.png';
 import massagemModeladoraImg from '../../assets/Services/massagem_modeladora_local.png';
+import massagemVelasQuentesImg from '../../assets/Services/massagem_velas_quentes.png';
 import ultrassomGorduraImg from '../../assets/Services/ultrassom_gordura_localizada.png';
 import ultrassomCeluliteImg from '../../assets/Services/ultrassom_celulite.png';
 import radiofrequenciaCorporalImg from '../../assets/Services/radiofrequencia_corporal.png';
@@ -34,7 +35,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Técnica com toques suaves e profundos que aliviam o estresse e tensões',
     longDescription: 'Com 1h de duração, a massagem relaxante é realizada com movimentos suaves, contínuos e leves, que envolvem deslizamentos e toques harmoniosos por todo o corpo. Esses movimentos ajudam a liberar a tensão muscular e trazer sensação imediata de bem-estar.',
     duration: '1 hora',
-    price: 'R$ 120',
     benefits: [
       'Reduz o estresse e a ansiedade',
       'Alivia tensões musculares',
@@ -67,7 +67,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Combina massagem relaxante com pedras aquecidas',
     longDescription: 'Com 1h de duração, essa técnica combina manobras suaves de massagem relaxante com a aplicação de pedras aquecidas em pontos estratégicos do corpo. O calor das pedras ajuda a dilatar os vasos sanguíneos, potencializando o relaxamento muscular e a sensação de bem-estar.',
     duration: '1 hora',
-    price: 'R$ 150',
     benefits: [
       'Relaxamento profundo do corpo e da mente',
       'Alívio de tensões e dores musculares',
@@ -99,7 +98,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Focada em dores musculares e pontos de tensão',
     longDescription: 'Com 1h de duração, massagem terapêutica utiliza movimentos específicos e profundos, com foco em aliviar dores musculares, corrigir tensões. A intensidade é ajustada conforme a necessidade de cada paciente.',
     duration: '1 hora',
-    price: 'R$ 140',
     benefits: [
       'Alívio de dores musculares e tensões',
       'Redução de pontos de gatilho e contraturas',
@@ -132,7 +130,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Movimentos leves que ativam o sistema linfático',
     longDescription: 'A drenagem linfática é realizada com movimentos suaves, rítmicos e delicados, sempre direcionados aos gânglios linfáticos. Esses toques estimulam a circulação da linfa, ajudando a reduzir o inchaço, eliminar toxinas e promover bem-estar.',
     duration: '60 minutos',
-    price: 'R$ 130',
     benefits: [
       'Melhora da circulação linfática e sanguínea',
       'Redução do inchaço e retenção de líquidos',
@@ -172,7 +169,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Combina drenagem linfática com massagem modeladora',
     longDescription: 'Com 1h20 de duração, essa técnica combina a drenagem linfática manual, realizada com movimentos suaves e direcionados aos gânglios linfáticos de todo o corpo, com massagem modeladora localizada, que utiliza manobras mais firmes para atuar em áreas específicas. O objetivo é reduzir inchaço, estimular a circulação e ajudar na definição do corpo.',
     duration: '1h20',
-    price: 'R$ 180',
     benefits: [
       'Redução de retenção de líquido e inchaço',
       'Melhora da circulação linfática e sanguínea',
@@ -211,7 +207,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Técnica intensa para modelar o corpo e reduzir medidas',
     longDescription: 'A massagem modeladora é uma técnica vigorosa que utiliza movimentos rápidos e intensos para melhorar a circulação e modelar o contorno corporal. Ideal para complementar tratamentos de emagrecimento.',
     duration: '20 minutos',
-    price: 'R$ 150',
     benefits: [
       'Melhora o aspecto da celulite',
       'Melhora o contorno corporal',
@@ -235,13 +230,42 @@ const servicesData: Record<string, ServiceData> = {
     image: massagemModeladoraImg,
     category: 'massage'
   },
+  'massagem-com-velas': {
+    id: 'massagem-com-velas',
+    name: 'Massagem com velas',
+    description: 'Técnica de massagem relaxante que utiliza velas especiais',
+    longDescription: 'Técnica de massagem relaxante que utiliza velas especiais, feitas de manteigas e óleos vegetais nutritivos, que ao serem aquecidas se transformam em um óleo morno. A temperatura agradável promove bem-estar físico e mental, enquanto os ativos hidratam e cuidam da pele.',
+    duration: '1 hora',
+    benefits: [
+      'Relaxamento profundo e alívio do estresse',
+      'Melhora da circulação sanguínea',
+      'Diminuição da tensão muscular',
+      'Aumento da sensação de bem-estar e equilíbrio emocional',
+      'Hidratação intensa e nutrição da pele',
+      'Estímulo sensorial por meio do calor suave e do aroma das velas'
+    ],
+    procedure: [
+      'A vela é acesa e, ao derreter, transforma-se em um óleo morno e aromático',
+      'O terapeuta despeja pequenas quantidades desse óleo sobre a pele',
+      'São realizados movimentos de massagem suaves e firmes, promovendo relaxamento, liberação de tensões e hidratação',
+      'A temperatura é cuidadosamente controlada para proporcionar conforto e segurança'
+    ],
+    contraindications: [
+      'Febre ou processos infecciosos',
+      'Doenças de pele na região de aplicação (lesões, alergias, dermatites)',
+      'Gestantes (especialmente nos primeiros meses, a depender das regiões)',
+      'Pessoas com problemas circulatórios graves, trombose ou varizes acentuadas',
+      'Alergia aos componentes da vela (óleos ou fragrâncias)'
+    ],
+    image: massagemVelasQuentesImg,
+    category: 'massage'
+  },
   'ultrassom-gordura-localizada': {
     id: 'ultrassom-gordura-localizada',
     name: 'Ultrassom para Gordura Localizada',
     description: 'Ondas sonoras que quebram células de gordura',
     longDescription: 'O ultrassom estético utiliza ondas sonoras de alta frequência que penetram no tecido adiposo, promovendo a vibração das células de gordura, rompendo suas membranas e facilitando sua eliminação. Sua aplicação é realizada por regiões, onde é aplicado gel de contato para condução das ondas, é indolor e não invasivo.',
     duration: '1 hora',
-    price: 'R$ 180',
     benefits: [
       'Redução de medidas e da gordura localizada',
       'Melhora a textura da pele',
@@ -271,7 +295,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Reduz celulite inflamada e melhora a circulação',
     longDescription: 'Procedimento que utiliza ondas ultrassônicas para penetrar nas camadas mais profundas da pele e tecido subcutâneo, promovendo vibrações e aquecimento controlado, estimulando a circulação e a oxigenação dos tecidos. Ajuda a desfazer fibroses e melhorar a permeabilidade da pele para ativos anticelulite.',
     duration: '1 hora',
-    price: 'R$ 160',
     benefits: [
       'Melhora o aspecto da celulite (reduz ondulações e irregularidades da pele)',
       'Estimula a circulação sanguínea e linfática',
@@ -304,7 +327,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Calor controlado para estimular colágeno e elastina',
     longDescription: 'É aplicado glicerina na pele para facilitar o deslizamento do aplicador e a condução da energia. O aparelho emite ondas de radiofrequência que aquecem as camadas mais profundas da pele (derme) de forma controlada, este aquecimento estimula a produção de colágeno e elastina, promovendo firmeza e efeito lifting. A temperatura na pele é monitorada durante todo o procedimento para garantir segurança e eficácia. A sessão é indolor, podendo causar apenas uma sensação de calor agradável.',
     duration: '1 hora',
-    price: 'R$ 200',
     benefits: [
       'Diminuição da flacidez da pele',
       'Estímulo da produção de colágeno',
@@ -335,7 +357,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Tratamentos personalizados para rejuvenescimento',
     longDescription: 'A estética facial engloba diversos tratamentos personalizados para rejuvenescimento, hidratação e revitalização da pele do rosto. Cada protocolo é adaptado às necessidades específicas de cada cliente.',
     duration: '60-90 minutos',
-    price: 'R$ 150',
     benefits: [
       'Rejuvenesce a pele do rosto',
       'Melhora a hidratação',
@@ -368,7 +389,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Remove impurezas e renova a pele',
     longDescription: 'Procedimento para higienização profunda da pele, removendo cravos, impurezas, células mortas e excesso de oleosidade. Inclui higienização, esfoliação, emoliência, extração manual, máscara calmante e hidratação, tem em torno de 1h30 de duração.',
     duration: '1h30',
-    price: 'R$ 120',
     benefits: [
       'Reduz cravos e previne acne',
       'Desobstrui poros',
@@ -398,7 +418,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Renova a pele e clareia manchas',
     longDescription: 'Aplicação de ácidos na pele para promover a renovação celular e descamação controlada, promovendo melhora das manchas, redução de linhas finas de expressão, viço e textura da pele. Leva em torno de 1h de aplicação.',
     duration: '1 hora',
-    price: 'R$ 250',
     benefits: [
       'Clareamento de manchas (melasma, hiperpigmentações pós-inflamatórias)',
       'Redução de linhas finas e rugas superficiais',
@@ -430,7 +449,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Cria microcanais para absorção de ativos',
     longDescription: 'Procedimento que utiliza um equipamento com microagulhas para criar microperfurações controladas na pele, facilitando a permeação de ativos para estimular a produção de colágeno e elastina. Tem em torno de 1h de duração.',
     duration: '1 hora',
-    price: 'R$ 300',
     benefits: [
       'Estimula a renovação celular e produção de colágeno',
       'Melhora textura e firmeza da pele',
@@ -463,7 +481,6 @@ const servicesData: Record<string, ServiceData> = {
     description: 'Calor para estimular colágeno e firmeza',
     longDescription: 'Tratamento que utiliza ondas de radiofrequência para aquecer as camadas mais profundas da pele, estimulando a produção de colágeno e elastina e auxilia no remodelamento facial. Pode ser associada a outros procedimentos para potencializar resultados. Em torno de 1h de duração.',
     duration: '1 hora',
-    price: 'R$ 220',
     benefits: [
       'Melhora a firmeza e sustentação da pele',
       'Reduz a flacidez facial',
