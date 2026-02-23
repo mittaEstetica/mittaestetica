@@ -5,6 +5,12 @@ const Hero = () => {
 
   const slides = [
     {
+      title: "Evento",
+      brand: "Dia das Mulheres",
+      description: "07 de março · Das 9h às 16h. Um dia especial de cuidados e beleza para celebrar todas as mulheres.",
+      gradient: "from-brand-gold via-white to-brand-green"
+    },
+    {
       title: "Bem-vinda à",
       brand: "Mitta",
       description: "Seu refúgio para relaxamento e beleza, onde cada tratamento é uma experiência única de bem-estar.",
