@@ -6,10 +6,12 @@ import Section from "./components/Section/Section";
 import Footer from "./components/Footer/Footer";
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 import Team from "./components/Team/Team";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 function App() {
   return (
     <Router>
+      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={
           <div className="min-h-screen bg-brand-background">
