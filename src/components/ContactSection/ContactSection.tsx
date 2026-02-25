@@ -11,8 +11,13 @@ function ContactSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Telefone */}
-          <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px]">
+          {/* Telefone / WhatsApp */}
+          <a
+            href="https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px] hover:border-brand-ui-element/40 hover:shadow-md transition-all"
+          >
             <div className="flex items-center mb-2">
               <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
                 <svg className="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 16.92V19a2 2 0 01-2 2A18 18 0 013 5a2 2 0 012-2h2.09a1 1 0 01.95.68l1.13 3.39a1 1 0 01-.24 1.05l-1.27 1.27a16 16 0 006.6 6.6l1.27-1.27a1 1 0 011.05-.24l3.39 1.13a1 1 0 01.68.95z" /></svg>
@@ -20,8 +25,8 @@ function ContactSection() {
               <span className="text-lg font-semibold text-slate-800">Telefone</span>
             </div>
             <div className="text-slate-700 text-base font-medium mb-1">(51) 99272-9544</div>
-            <div className="text-slate-400 text-sm">WhatsApp disponível</div>
-          </div>
+            <div className="text-slate-400 text-sm">WhatsApp disponível · Clique para agendar</div>
+          </a>
           {/* Endereço */}
           <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px]">
             <div className="flex items-center mb-2">

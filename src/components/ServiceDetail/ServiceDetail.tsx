@@ -646,9 +646,14 @@ const ServiceDetail: React.FC = () => {
               <p className="text-brand-text-secondary text-sm mb-4">
                 Entre em contato para agendar uma consulta e conhecer melhor este tratamento.
               </p>
-              <button className="w-full bg-brand-ui-element text-white py-3 px-4 rounded-xl font-medium hover:bg-brand-gold transition-colors">
+              <a
+                href={`https://wa.me/555192729544?text=${encodeURIComponent(`Olá, gostaria de agendar uma consulta para ${service.name}.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-brand-ui-element text-white py-3 px-4 rounded-xl font-medium hover:bg-brand-gold transition-colors text-center"
+              >
                 Agendar Consulta
-              </button>
+              </a>
             </div>
           </div>
         </div>
