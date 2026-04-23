@@ -1,9 +1,21 @@
 import { useState, useEffect } from 'react';
+import MothersDayBanner from '../../assets/mothers_day_banner.png';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
+    {
+      title: "Especial",
+      brand: "Dia das Mães",
+      description: "Venha celebrar conosco no dia 09 de Maio a partir das 9h. Um evento dedicado à beleza e bem-estar para quem você mais ama.",
+      gradient: "from-rose-100 via-pink-50 to-brand-gold/20",
+      bgImage: MothersDayBanner,
+      cta: {
+        text: "Garantir Vaga",
+        link: "https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20evento%20de%20Dia%20das%20M%C3%A3es!"
+      }
+    },
     {
       title: "Bem-vinda à",
       brand: "Mitta",
@@ -46,21 +58,42 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
-      {/* Background with gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].gradient} transition-all duration-1000`}></div>
+      {/* Background with gradient or image */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].gradient} transition-colors duration-1000`}></div>
+      {slides.map((slide, index) => (
+        slide.bgImage && (
+          <div 
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            style={{ backgroundImage: `url(${slide.bgImage})` }}
+          >
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+          </div>
+        )
+      ))}
       
       {/* Carousel Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="transition-all duration-500 ease-in-out">
-          <h1 className="text-4xl md:text-6xl font-light text-slate-900 mb-4">
+          <h1 className={`text-4xl md:text-7xl font-light text-slate-900 mb-6 ${slides[currentSlide].bgImage ? 'drop-shadow-md' : ''}`}>
             {slides[currentSlide].title}{' '}
-            <span className="bg-gradient-to-r from-brand-green to-brand-gold bg-clip-text text-transparent font-semibold">
+            <span className={`bg-gradient-to-r from-brand-green to-brand-gold bg-clip-text text-transparent ${slides[currentSlide].bgImage ? 'font-bold drop-shadow-sm' : 'font-semibold'}`}>
               {slides[currentSlide].brand}
             </span>
           </h1>
-          <p className="text-lg md:text-2xl text-brand-text-secondary max-w-2xl mx-auto">
+          <p className={`text-lg md:text-2xl text-brand-text-secondary max-w-2xl mx-auto mb-10 ${slides[currentSlide].bgImage ? 'text-slate-800 drop-shadow-sm font-medium' : ''}`}>
             {slides[currentSlide].description}
           </p>
+          {slides[currentSlide].cta && (
+            <a 
+              href={slides[currentSlide].cta.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-brand-gold text-white font-medium px-8 py-4 rounded-full shadow-lg hover:bg-brand-gold/90 transition-all hover:scale-105 duration-300"
+            >
+              {slides[currentSlide].cta.text}
+            </a>
+          )}
         </div>
       </div>
 

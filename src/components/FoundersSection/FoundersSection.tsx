@@ -1,5 +1,4 @@
 import MileneImg from '../../assets/milene.jpeg';
-import TailaImg from '../../assets/taila.jpeg';
 
 const founders = [
   {
@@ -18,23 +17,7 @@ const founders = [
         </ul>
       </>
     )
-  },
-  {
-    name: 'Taila Rosa',
-    age: 24,
-    img: TailaImg,
-    bio: (
-      <>
-        <p className="mb-2">Graduada em <b>Estética e Cosmética</b> pela FADERGS</p>
-        <p className="mb-2">Cursos:</p>
-        <ul className="list-disc list-inside text-sm text-slate-600">
-          <li>Cosmetologia - Abed</li>
-          <li>Drenagem Linfática Manual - Pré e Pós Operatório de Cirurgias Estéticas - Instituto Lis</li>
-          <li>Tricologia Capilar - CF cursos de formação</li>
-        </ul>
-      </>
-    )
-  },
+  }
 ];
 
 const FoundersSection = () => {
@@ -44,9 +27,10 @@ const FoundersSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-light text-slate-800 mb-2">Quem cuida de você</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch justify-center">
+        <div className="flex justify-center w-full">
+          <div className="w-full max-w-lg mx-auto">
           {founders.map((f) => (
-            <div key={f.name} className="flex flex-col items-center bg-white/80 rounded-3xl shadow-xl p-10 border border-slate-100 h-full transition-transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div key={f.name} className="flex flex-col items-center bg-white/80 rounded-3xl shadow-xl p-12 border border-slate-100 transition-transform hover:scale-105 hover:shadow-2xl duration-300">
               <div className="w-32 h-32 mb-6 rounded-full border-4 border-white shadow-lg overflow-hidden flex items-center justify-center bg-white">
                 <img src={f.img} alt={f.name} className="w-28 h-28 object-cover rounded-full" />
               </div>
@@ -57,6 +41,7 @@ const FoundersSection = () => {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

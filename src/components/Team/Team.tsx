@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MileneImg from '../../assets/milene.jpeg';
-import TailaImg from '../../assets/taila.jpeg';
 
 const teamMembers = [
   {
@@ -24,21 +23,31 @@ const teamMembers = [
     )
   },
   {
-    name: 'Taila Rosa',
-    age: 24,
-    img: TailaImg,
-    role: 'Esteticista',
-    specialty: 'Drenagem e Massoterapia',
+    name: 'Em breve',
+    role: 'Profissional',
+    specialty: 'Novidades a caminho',
+    isPlaceholder: true,
     bio: (
-      <>
-        <p className="mb-2">Graduada em <b>Estética e Cosmética</b> pela FADERGS</p>
-        <p className="mb-2 font-medium text-slate-700">Cursos:</p>
-        <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
-          <li>Cosmetologia - Abed</li>
-          <li>Drenagem Linfática Manual - Pré e Pós Operatório de Cirurgias Estéticas - Instituto Lis</li>
-          <li>Tricologia Capilar - CF cursos de formação</li>
-        </ul>
-      </>
+      <div className="flex flex-col items-center justify-center mt-4 text-center opacity-70">
+        <svg className="w-8 h-8 text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p className="text-slate-500">Em breve uma nova profissional fará parte da equipe para cuidar de você.</p>
+      </div>
+    )
+  },
+  {
+    name: 'Em breve ',
+    role: 'Profissional',
+    specialty: 'Novidades a caminho',
+    isPlaceholder: true,
+    bio: (
+      <div className="flex flex-col items-center justify-center mt-4 text-center opacity-70">
+        <svg className="w-8 h-8 text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p className="text-slate-500">Em breve uma nova profissional fará parte da equipe para cuidar de você.</p>
+      </div>
     )
   }
 ];
@@ -81,13 +90,13 @@ const Team = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+        <div className="flex justify-center w-full px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
           {teamMembers.map((member: any, index) => (
             <div 
-              key={member.name} 
-              className={`group relative bg-white rounded-2xl shadow-sm p-8 border border-slate-200 h-full transition-all duration-300 hover:shadow-md ${
-                member.isPlaceholder ? 'opacity-75' : ''
+              key={member.name + index} 
+              className={`group relative bg-white rounded-3xl shadow-sm p-10 border border-slate-200 transition-all duration-300 hover:shadow-lg ${
+                member.isPlaceholder ? 'opacity-60 grayscale' : ''
               }`}
             >
               
