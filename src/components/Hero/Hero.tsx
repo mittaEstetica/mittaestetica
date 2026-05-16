@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
 
+interface Slide {
+  title: string;
+  brand: string;
+  description: string;
+  gradient: string;
+  bgImage?: string;
+  cta?: {
+    link: string;
+    text: string;
+  };
+}
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
+  const slides: Slide[] = [
 
     {
       title: "Bem-vinda à",

@@ -7,6 +7,9 @@ import Footer from "./components/Footer/Footer";
 import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 import Team from "./components/Team/Team";
 import AnalyticsTracker from "./components/AnalyticsTracker";
+import MentoriaLogin from "./components/Mentoria/MentoriaLogin";
+import MentoriaCourse from "./components/Mentoria/MentoriaCourse";
+import MentoriaAdmin from "./components/Mentoria/MentoriaAdmin";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         } />
         <Route path="/servicos/:serviceId" element={<ServiceDetail />} />
         <Route path="/equipe" element={<Team />} />
+        <Route path="/mentoria/login" element={<MentoriaLogin />} />
+        <Route path="/mentoria/admin" element={<MentoriaAdmin />} />
+        <Route path="/mentoria" element={<MentoriaCourse />} />
       </Routes>
     </Router>
   );
