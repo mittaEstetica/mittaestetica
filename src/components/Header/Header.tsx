@@ -42,7 +42,7 @@ const Header = () => {
                 <Link to="/equipe" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Equipe</Link>
               </li>
               <li>
-                <Link to="/mentoria" className="font-medium text-brand-ui-element hover:text-brand-gold transition-all duration-200">Mentoria</Link>
+                <Link to="/membros" className="font-medium text-brand-ui-element hover:text-brand-gold transition-all duration-200">Área de Membros</Link>
               </li>
               <li>
                 <a href="#about" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Sobre</a>
@@ -104,7 +104,7 @@ const Header = () => {
           <a href="#home" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Início</a>
           <a href="#services" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Serviços</a>
           <Link to="/equipe" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Equipe</Link>
-          <Link to="/mentoria" onClick={closeMenu} className="py-3 px-3 font-medium text-brand-ui-element hover:text-brand-gold hover:bg-slate-50 rounded-lg transition-colors">Mentoria</Link>
+          <Link to="/membros" onClick={closeMenu} className="py-3 px-3 font-medium text-brand-ui-element hover:text-brand-gold hover:bg-slate-50 rounded-lg transition-colors">Área de Membros</Link>
           <a href="#about" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Sobre</a>
           <a href="#contact" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Contato</a>
           <a
