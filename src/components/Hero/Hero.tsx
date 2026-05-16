@@ -1,21 +1,11 @@
 import { useState, useEffect } from 'react';
-import MothersDayBanner from '../../assets/mothers_day_banner.png';
+
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    {
-      title: "Especial",
-      brand: "Dia das Mães",
-      description: "Venha celebrar conosco no dia 09 de Maio a partir das 9h. Um evento dedicado à beleza e bem-estar para quem você mais ama.",
-      gradient: "from-rose-100 via-pink-50 to-brand-gold/20",
-      bgImage: MothersDayBanner,
-      cta: {
-        text: "Garantir Vaga",
-        link: "https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20evento%20de%20Dia%20das%20M%C3%A3es!"
-      }
-    },
+
     {
       title: "Bem-vinda à",
       brand: "Mitta",
