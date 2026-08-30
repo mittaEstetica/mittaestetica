@@ -7,17 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+      },
       colors: {
-        'brand-header-start': '#cd9540',
-        'brand-header-end': '#cd9540',
-        'brand-ui-element': '#cd9540',
-        'brand-background': '#f7f7f9',
-        'brand-text-primary': '#2c3e50',
-        'brand-text-secondary': '#7f8c8d',
-        'brand-green': '#94b47e',
-        'brand-gold': '#dfb678',
+        'brand-header-start': '#B89B72',
+        'brand-header-end': '#B89B72',
+        'brand-ui-element': '#B89B72',
+        'brand-background': '#FAF8F5',
+        'brand-text-primary': '#1C1917',
+        'brand-text-secondary': '#78716C',
+        'brand-green': '#A3B19B',
+        'brand-gold': '#B89B72',
+        'luxury-bg': '#FAF8F5',
+        'luxury-card': '#FFFFFF',
+        'luxury-border': '#EAE5DF',
+        'luxury-gold': '#B89B72',
+        'luxury-dark': '#1C1917',
       },
     },
   },
   plugins: [],
-} 
+}

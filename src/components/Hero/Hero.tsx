@@ -1,135 +1,45 @@
-import { useState, useEffect } from 'react';
-
-interface Slide {
-  title: string;
-  brand: string;
-  description: string;
-  gradient: string;
-  bgImage?: string;
-  cta?: {
-    link: string;
-    text: string;
-  };
-}
+const WHATSAPP_URL = 'https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta.';
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides: Slide[] = [
-
-    {
-      title: "Bem-vinda à",
-      brand: "Mitta",
-      description: "Seu refúgio para relaxamento e beleza, onde cada tratamento é uma experiência única de bem-estar.",
-      gradient: "from-brand-green via-white to-brand-gold"
-    },
-    {
-      title: "Estética Facial",
-      brand: "Especializada",
-      description: "Tratamentos faciais personalizados com tecnologia de ponta para realçar sua beleza natural e promover a saúde da sua pele.",
-      gradient: "from-brand-ui-element via-white to-brand-gold"
-    },
-    {
-      title: "Bem-estar",
-      brand: "Completo",
-      description: "Massagens terapêuticas e tratamentos corporais que combinam relaxamento profundo com resultados visíveis para seu corpo e mente.",
-      gradient: "from-brand-gold via-white to-brand-green"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
-    <section id="home" className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
-      {/* Background with gradient or image */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].gradient} transition-colors duration-1000`}></div>
-      {slides.map((slide, index) => (
-        slide.bgImage && (
-          <div 
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-            style={{ backgroundImage: `url(${slide.bgImage})` }}
-          >
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
-          </div>
-        )
-      ))}
-      
-      {/* Carousel Content */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <div className="transition-all duration-500 ease-in-out">
-          <h1 className={`text-4xl md:text-7xl font-light text-slate-900 mb-6 ${slides[currentSlide].bgImage ? 'drop-shadow-md' : ''}`}>
-            {slides[currentSlide].title}{' '}
-            <span className={`bg-gradient-to-r from-brand-green to-brand-gold bg-clip-text text-transparent ${slides[currentSlide].bgImage ? 'font-bold drop-shadow-sm' : 'font-semibold'}`}>
-              {slides[currentSlide].brand}
+    <section id="home" className="relative pt-32 pb-20 md:pt-44 md:pb-28 bg-[#FAF9F6] border-b border-[#E8E4DF]">
+      <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Category Tag */}
+          <div className="inline-block mb-6">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#B89B72]">
+              Estética Avançada & Nutrição Clínica · Passo da Areia
             </span>
+          </div>
+
+          {/* Editorial Headline */}
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-[#1C1917] leading-[1.1] tracking-tight mb-8">
+            A arte de cuidar da sua saúde com <span className="italic font-light text-[#B89B72]">ciência & sofisticação.</span>
           </h1>
-          <p className={`text-lg md:text-2xl text-brand-text-secondary max-w-2xl mx-auto mb-10 ${slides[currentSlide].bgImage ? 'text-slate-800 drop-shadow-sm font-medium' : ''}`}>
-            {slides[currentSlide].description}
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg text-[#57534E] font-light leading-relaxed max-w-2xl mx-auto mb-10">
+            Protocolos faciais, corporais e consultas nutricionais rigorosamente personalizados, projetados para quem busca resultados visíveis e segurança clínica.
           </p>
-          {slides[currentSlide].cta && (
-            <a 
-              href={slides[currentSlide].cta.link}
+
+          {/* Rounded Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-brand-gold text-white font-medium px-8 py-4 rounded-full shadow-lg hover:bg-brand-gold/90 transition-all hover:scale-105 duration-300"
+              className="inline-flex items-center justify-center px-9 py-4 bg-[#1C1917] text-[#FAF8F5] text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-[#B89B72] transition-all duration-300 shadow-sm rounded-full"
             >
-              {slides[currentSlide].cta.text}
+              Agendar Consulta Privada
             </a>
-          )}
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center px-9 py-4 bg-transparent border border-[#1C1917] text-[#1C1917] text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-[#1C1917] hover:text-[#FAF8F5] transition-all duration-300 rounded-full"
+            >
+              Conhecer Tratamentos
+            </a>
+          </div>
         </div>
-      </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
-      >
-        <svg className="w-6 h-6 text-brand-ui-element" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
-      >
-        <svg className="w-6 h-6 text-brand-ui-element" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentSlide 
-                ? 'bg-brand-ui-element scale-125' 
-                : 'bg-white/60 hover:bg-white/80'
-            }`}
-          />
-        ))}
       </div>
     </section>
   );

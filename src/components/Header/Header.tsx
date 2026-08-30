@@ -6,8 +6,17 @@ const WHATSAPP_URL = 'https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20d
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => { if (e.key === 'Escape') closeMenu(); };
@@ -22,104 +31,136 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
-      <div className="container mx-auto px-6 py-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EAE5DF] py-4 shadow-xs' 
+        : 'bg-[#FAF8F5]/80 backdrop-blur-xs border-b border-[#EAE5DF]/60 py-6'
+    }`}>
+      <div className="container mx-auto px-8 max-w-7xl">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Link to="/">
-              <img src={mittaLogo} alt="Mitta Logo" className="h-12 mr-3" />
-            </Link>
-          </div>
-          <nav className="hidden md:block">
-            <ul className="flex space-x-8">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src={mittaLogo} 
+              alt="Mitta Estética" 
+              className="h-9 md:h-10 w-auto tracking-widest transition-opacity hover:opacity-80" 
+            />
+          </Link>
+
+          {/* Navigation Links */}
+          <nav className="hidden lg:block">
+            <ul className="flex items-center space-x-10 text-[11px] font-medium uppercase tracking-[0.2em] text-[#57534E]">
               <li>
-                <a href="#home" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Início</a>
+                <a href="#home" className="hover:text-[#B89B72] transition-colors duration-300">
+                  Início
+                </a>
               </li>
               <li>
-                <a href="#services" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Serviços</a>
+                <a href="#founders" className="hover:text-[#B89B72] transition-colors duration-300">
+                  Sobre
+                </a>
               </li>
               <li>
-                <Link to="/equipe" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Equipe</Link>
+                <a href="#services" className="hover:text-[#B89B72] transition-colors duration-300">
+                  Procedimentos
+                </a>
               </li>
               <li>
-                <Link to="/membros" className="font-medium text-brand-ui-element hover:text-brand-gold transition-all duration-200">Área de Membros</Link>
+                <Link to="/equipe" className="hover:text-[#B89B72] transition-colors duration-300">
+                  Equipe
+                </Link>
               </li>
               <li>
-                <a href="#about" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Sobre</a>
-              </li>
-              <li>
-                <a href="#contact" className="font-medium text-slate-700 hover:text-slate-900 transition-all duration-200">Contato</a>
+                <a href="#contact" className="hover:text-[#B89B72] transition-colors duration-300">
+                  Contato
+                </a>
               </li>
             </ul>
           </nav>
-          <div className="flex items-center space-x-4">
+
+          {/* CTA & Mobile Toggle */}
+          <div className="flex items-center space-x-6">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block px-6 py-2 bg-brand-ui-element text-white rounded-full font-medium hover:bg-brand-header-end transition-all duration-200"
+              className="hidden sm:inline-block px-7 py-3 bg-[#1C1917] text-[#FAF8F5] text-[11px] font-medium uppercase tracking-[0.2em] hover:bg-[#B89B72] transition-all duration-300 shadow-xs rounded-full"
             >
-              Agendar
+              Agendar Consulta
             </a>
-            {/* Mobile menu button */}
+
+            {/* Mobile menu button text */}
             <button
               type="button"
-              onClick={() => setIsMenuOpen(true)}
-              className="md:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
-              aria-label="Abrir menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1917] hover:text-[#B89B72] transition-colors py-2"
+              aria-label="Menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isMenuOpen ? 'FECHAR' : 'MENU'}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu: backdrop */}
+      {/* Mobile menu panel */}
       <div
-        onClick={closeMenu}
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        aria-hidden="true"
-      />
-
-      {/* Mobile menu: side panel */}
-      <div
-        className={`fixed top-0 right-0 bottom-0 w-72 max-w-[85vw] bg-white shadow-xl z-50 flex flex-col transition-transform duration-300 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed inset-0 top-[73px] bg-[#FAF8F5] z-40 flex flex-col justify-between p-8 transition-all duration-500 lg:hidden ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
       >
-        <div className="flex justify-between items-center p-4 border-b border-slate-100">
-          <span className="font-medium text-slate-800">Menu</span>
-          <button
-            type="button"
-            onClick={closeMenu}
-            className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
-            aria-label="Fechar menu"
+        <nav className="flex flex-col space-y-6 pt-6">
+          <a 
+            href="#home" 
+            onClick={closeMenu} 
+            className="font-serif text-3xl text-[#1C1917] hover:text-[#B89B72] transition-colors"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <nav className="flex flex-col p-4 gap-1">
-          <a href="#home" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Início</a>
-          <a href="#services" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Serviços</a>
-          <Link to="/equipe" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Equipe</Link>
-          <Link to="/membros" onClick={closeMenu} className="py-3 px-3 font-medium text-brand-ui-element hover:text-brand-gold hover:bg-slate-50 rounded-lg transition-colors">Área de Membros</Link>
-          <a href="#about" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Sobre</a>
-          <a href="#contact" onClick={closeMenu} className="py-3 px-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors">Contato</a>
+            Início
+          </a>
+          <a 
+            href="#founders" 
+            onClick={closeMenu} 
+            className="font-serif text-3xl text-[#1C1917] hover:text-[#B89B72] transition-colors"
+          >
+            Sobre
+          </a>
+          <a 
+            href="#services" 
+            onClick={closeMenu} 
+            className="font-serif text-3xl text-[#1C1917] hover:text-[#B89B72] transition-colors"
+          >
+            Procedimentos
+          </a>
+          <Link 
+            to="/equipe" 
+            onClick={closeMenu} 
+            className="font-serif text-3xl text-[#1C1917] hover:text-[#B89B72] transition-colors"
+          >
+            Equipe
+          </Link>
+          <a 
+            href="#contact" 
+            onClick={closeMenu} 
+            className="font-serif text-3xl text-[#1C1917] hover:text-[#B89B72] transition-colors"
+          >
+            Contato
+          </a>
+        </nav>
+
+        <div className="pt-8 border-t border-[#EAE5DF]">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
-            className="mt-4 py-3 px-4 bg-brand-ui-element text-white rounded-xl font-medium text-center hover:bg-brand-gold transition-colors"
+            className="block w-full py-4 bg-[#1C1917] text-[#FAF8F5] text-center text-xs font-semibold uppercase tracking-[0.2em] rounded-full"
           >
-            Agendar no WhatsApp
+            Agendar Consulta no WhatsApp
           </a>
-        </nav>
+        </div>
       </div>
     </header>
   );
 };
 
 export default Header;
+

@@ -1,54 +1,92 @@
-import React from "react";
+const WHATSAPP_URL = 'https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta.';
+const MAPS_URL = 'https://maps.google.com/?q=Rua+Açores,+68+-+Passo+da+Areia,+Porto+Alegre+-+RS,+91030-340';
 
 function ContactSection() {
   return (
-    <section id="contact" className="py-2">
-      <div>
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-light text-slate-800 mb-2">Entre em Contato</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Estamos prontos para te ajudar a encontrar o tratamento perfeito para seu bem-estar.
+    <section id="contact" className="py-24 md:py-32 bg-[#FAF8F5]">
+      <div className="container mx-auto px-8 max-w-7xl">
+        <div className="max-w-xl mb-16">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#B89B72] block mb-3">
+            Atendimento & Localização
+          </span>
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#1C1917] tracking-tight mb-4">
+            Entre em Contato
+          </h2>
+          <p className="text-[#78716C] text-sm font-light leading-relaxed">
+            Agendamentos sob consulta prévia para garantir atendimento exclusivo.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Telefone / WhatsApp */}
-          <a
-            href="https://wa.me/555192729544?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px] hover:border-brand-ui-element/40 hover:shadow-md transition-all"
-          >
-            <div className="flex items-center mb-2">
-              <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 16.92V19a2 2 0 01-2 2A18 18 0 013 5a2 2 0 012-2h2.09a1 1 0 01.95.68l1.13 3.39a1 1 0 01-.24 1.05l-1.27 1.27a16 16 0 006.6 6.6l1.27-1.27a1 1 0 011.05-.24l3.39 1.13a1 1 0 01.68.95z" /></svg>
-              </div>
-              <span className="text-lg font-semibold text-slate-800">Telefone</span>
+
+        {/* Editorial Hairline Grid (Zero icons) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-b border-[#EAE5DF] py-12">
+          
+          {/* Col 1: Telefone */}
+          <div className="space-y-4">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B89B72] block">
+              01 / CONTATO DIRETO
+            </span>
+            <h3 className="font-serif text-2xl font-normal text-[#1C1917]">WhatsApp & Telefone</h3>
+            <p className="text-xl font-light text-[#1C1917] tracking-wider">(51) 99272-9544</p>
+            <p className="text-xs text-[#78716C] font-light leading-relaxed">
+              Atendimento ágil para dúvidas, esclarecimentos e agendamento de horário.
+            </p>
+            <div className="pt-2">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border-b border-[#1C1917] pb-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1917] hover:text-[#B89B72] hover:border-[#B89B72] transition-colors"
+              >
+                Iniciar Conversa no WhatsApp —
+              </a>
             </div>
-            <div className="text-slate-700 text-base font-medium mb-1">(51) 99272-9544</div>
-            <div className="text-slate-400 text-sm">WhatsApp disponível · Clique para agendar</div>
-          </a>
-          {/* Endereço */}
-          <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px]">
-            <div className="flex items-center mb-2">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" /></svg>
-              </div>
-              <span className="text-lg font-semibold text-slate-800">Endereço</span>
-            </div>
-            <div className="text-slate-700 text-base font-medium mb-1">Rua Açores, 68 - Passo da Areia</div>
-            <div className="text-slate-400 text-sm">Porto Alegre, RS - 91030-340</div>
           </div>
-          {/* Horário */}
-          <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col items-start min-h-[140px]">
-            <div className="flex items-center mb-2">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" /><circle cx="12" cy="12" r="10" /></svg>
-              </div>
-              <span className="text-lg font-semibold text-slate-800">Horário de Funcionamento</span>
+
+          {/* Col 2: Endereço */}
+          <div className="space-y-4 md:border-l md:border-[#EAE5DF] md:pl-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B89B72] block">
+              02 / ENDEREÇO
+            </span>
+            <h3 className="font-serif text-2xl font-normal text-[#1C1917]">Passo da Areia</h3>
+            <div className="text-xs text-[#57534E] font-light space-y-1">
+              <p className="font-medium text-[#1C1917]">Rua Açores, 68</p>
+              <p>Passo da Areia, Porto Alegre - RS</p>
+              <p className="text-[#78716C]">CEP: 91030-340</p>
             </div>
-            <div className="text-slate-700 text-base font-medium mb-1">Segunda a Sábado: 9h às 19h</div>
-            <div className="text-slate-400 text-sm">Domingo: Fechado</div>
+            <div className="pt-2">
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border-b border-[#1C1917] pb-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1917] hover:text-[#B89B72] hover:border-[#B89B72] transition-colors"
+              >
+                Abrir no Google Maps —
+              </a>
+            </div>
           </div>
+
+          {/* Col 3: Horários */}
+          <div className="space-y-4 md:border-l md:border-[#EAE5DF] md:pl-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B89B72] block">
+              03 / FUNCIONAMENTO
+            </span>
+            <h3 className="font-serif text-2xl font-normal text-[#1C1917]">Horário de Atendimento</h3>
+            <div className="space-y-2 text-xs font-light text-[#57534E]">
+              <div className="flex justify-between py-1 border-b border-[#EAE5DF]">
+                <span>Terça a Sexta:</span>
+                <span className="font-medium text-[#1C1917]">10h às 20h</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-[#EAE5DF]">
+                <span>Sábado:</span>
+                <span className="font-medium text-[#1C1917]">09h às 17h</span>
+              </div>
+              <div className="flex justify-between py-1 text-[#78716C]">
+                <span>Segunda e Domingo:</span>
+                <span>Fechado</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
